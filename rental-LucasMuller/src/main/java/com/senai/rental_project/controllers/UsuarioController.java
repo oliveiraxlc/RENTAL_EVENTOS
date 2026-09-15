@@ -3,6 +3,7 @@ package com.senai.rental_project.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -12,15 +13,26 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.senai.rental_project.models.Login;
 import com.senai.rental_project.models.Usuario;
 import com.senai.rental_project.services.UsuarioService;
 
+import lombok.RequiredArgsConstructor;
+
 @RestController
 @RequestMapping("/usuario")
+@RequiredArgsConstructor
 public class UsuarioController {
 
     @Autowired
     private UsuarioService usuarioService;
+
+    @PostMapping("/login")
+    public ResponseEntity<String> login(@RequestBody Login dto) {
+        String token = usuarioService.realizarLogin(dto);
+        return ResponseEntity.ok(token);
+    }
+
 
     @GetMapping("/contar-usuarios")
     public Long contarUsuarios() {

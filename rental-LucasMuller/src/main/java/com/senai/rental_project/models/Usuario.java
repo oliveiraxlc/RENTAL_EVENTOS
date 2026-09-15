@@ -16,6 +16,9 @@ public class Usuario {
     @Column(name="nome")
     private String nome;
 
+    @Column(name="login")
+    private String login;
+
     @Column(name="email")
     private String email;
 
@@ -28,12 +31,13 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(Long id, String nome, String email, String cpf, String senha) {
+    public Usuario(Long id, String nome, String email, String cpf, String senha, String login) {
         this.id = id;
         this.nome = nome;
         this.email = email;
         this.cpf = cpf;
         this.senha = senha;
+        this.login = login;
     }
 
     public Long getId() {
@@ -42,6 +46,14 @@ public class Usuario {
 
     public void setId(Long id) {
         this.id = id;
+    }
+    
+    public String getLogin() {
+        return login;
+    }
+
+    public void setlogin(String login) {
+        this.login = login;
     }
 
     public String getNome() {
