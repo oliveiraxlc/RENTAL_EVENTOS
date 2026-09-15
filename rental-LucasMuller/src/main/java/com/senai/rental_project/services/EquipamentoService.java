@@ -1,0 +1,52 @@
+package com.senai.rental_project.services;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.senai.rental_project.moldels.Equipamento;
+import com.senai.rental_project.repositories.EquipamentoRepository;
+
+@Service
+public class EquipamentoService {
+    
+    @Autowired
+    private EquipamentoRepository equipamentoRepository;
+
+    public Long contarEquipamentos() {
+        return equipamentoRepository.count();
+    }
+
+    public Equipamento buscarEquipamento(Integer id) {
+        return equipamentoRepository.findById(id).get();
+    }
+
+    public List<Equipamento> listaEquipamentos() {
+        return equipamentoRepository.findAll();
+    }
+
+    public Boolean deletarEquipamento(Integer id) {
+        if(equipamentoRepository.existsById(id)) {
+            equipamentoRepository.deleteById(id);
+            return true;
+        }  
+        return false;  
+    }
+
+    public Equipamento cadastrarEquipamento(Equipamento equipamento) {
+        return equipamentoRepository.save(equipamento);
+    }
+
+      public Equipamento atualizarEquipamento(Integer id, Equipamento equipamento) {
+        Equipamento equipamentoRecuperado = buscarEquipamento(id);
+        if (equipamentoRecuperado != null) {
+            equipamentoRecuperado.setId(equipamento.getId());
+            if (equipamento.getMarca() != null) {
+                equipamentoRecuperado.setMarca(equipamento.getMarca());
+            }
+            return equipamentoRepository.save(equipamentoRecuperado);
+        }
+        return null;
+    }
+}
