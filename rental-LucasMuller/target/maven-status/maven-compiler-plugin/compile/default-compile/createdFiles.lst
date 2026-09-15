@@ -1,0 +1,14 @@
+com\senai\rental_project\controllers\EquipamentoController.class
+com\senai\rental_project\models\Usuario.class
+com\senai\rental_project\repositories\EquipamentoRepository.class
+com\senai\rental_project\services\UsuarioService.class
+com\senai\rental_project\controllers\MovimentacaoController.class
+com\senai\rental_project\models\Movimentacao.class
+com\senai\rental_project\repositories\MovimentacaoRepository.class
+com\senai\rental_project\controllers\UsuarioController.class
+com\senai\rental_project\repositories\UsuarioRepository.class
+com\senai\rental_project\configs\Swagger.class
+com\senai\rental_project\RentalProjectApplication.class
+com\senai\rental_project\models\Equipamento.class
+com\senai\rental_project\services\MovimentacaoService.class
+com\senai\rental_project\services\EquipamentoService.class

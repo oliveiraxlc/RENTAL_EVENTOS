@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.senai.rental_project.moldels.Usuario;
+import com.senai.rental_project.models.Usuario;
 import com.senai.rental_project.services.UsuarioService;
 
 @RestController

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.senai.rental_project.moldels.Equipamento;
+import com.senai.rental_project.models.Equipamento;
 import com.senai.rental_project.services.EquipamentoService;
 @RestController
 @RequestMapping("/equipamento")

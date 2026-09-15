@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.senai.rental_project.moldels.Movimentacao;
+import com.senai.rental_project.models.Movimentacao;
 import com.senai.rental_project.services.MovimentacaoService;
 
 @RestController
